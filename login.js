@@ -25,6 +25,7 @@ function updateUserDisplay() {
 function logout() {
     localStorage.removeItem('currentUser');
     updateUserDisplay();
+    alert("Bạn đã đăng xuất thành công!");
 }
 
 function loginUser() {
