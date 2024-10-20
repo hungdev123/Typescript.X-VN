@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #007bff;
+    background: #003366; /* Màu xanh đậm */
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -47,7 +47,7 @@ h1, h2 {
 footer {
     text-align: center;
     padding: 20px;
-    background: #007bff;
+    background: #003366; /* Màu xanh đậm */
     color: white;
     position: relative;
     bottom: 0;
