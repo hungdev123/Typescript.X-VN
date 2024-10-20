@@ -36,13 +36,6 @@
             font-weight: bold;
         }
 
-        nav .button {
-            background: #0056b3; /* Nút Đăng ký và Đăng nhập */
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
         main {
             padding: 20px;
         }
@@ -92,6 +85,12 @@
             bottom: 0;
             width: 100%;
         }
+
+        .note {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -110,10 +109,14 @@
     </header>
 
     <main>
-        <h2>Đăng Ký Tài Khoản</h2>
+        <h2>Đăng Ký</h2>
         <div class="form-container">
             <form id="registerForm" action="https://formspree.io/f/xldedrwz" method="POST">
-                <label for="username">Tên tài khoản:</label>
+                <label for="scratchAccount">Tài khoản Scratch:</label>
+                <input type="text" id="scratchAccount" name="scratchAccount" required>
+                <p class="note">Bạn sẽ có tài khoản cho đến khi bạn nhận được tin nhắn trong Scratch.</p>
+
+                <label for="username">Tên người dùng:</label>
                 <input type="text" id="username" name="username" required>
 
                 <label for="password">Mật khẩu:</label>
