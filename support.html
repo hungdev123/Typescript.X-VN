@@ -1,34 +1,138 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trợ Giúp</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Trợ Giúp - Typescript.X-VN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>Trợ Giúp</h1>
+        <h1>Typescript.X-VN</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
                 <li><a href="tinh_hinh.html">Tình hình</a></li>
                 <li><a href="support.html">Trợ giúp</a></li>
-                <li><button id="registerBtn"><a href="register.html">Đăng ký</a></button></li>
-                <li><button id="loginBtn">Đăng nhập</button></li>
+                <li><a class="button" href="register.html">Đăng ký</a></li>
+                <li><a class="button" id="loginBtn">Đăng nhập</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Hỗ trợ và Liên hệ</h2>
-            <p>Nếu bạn cần trợ giúp, vui lòng liên hệ với chúng tôi qua email hoặc qua form liên hệ.</p>
-        </section>
+        <h2>Trợ Giúp</h2>
+        <div class="form-container">
+            <form id="supportForm" action="https://formspree.io/f/xdkonpjy" method="POST">
+                <label for="scratchAccount">Tài khoản Scratch:</label>
+                <input type="text" id="scratchAccount" name="scratchAccount" required>
+
+                <label for="title">Tiêu đề:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="reason">Lí do:</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+
+                <p>Bạn sẽ được nhận tin nhắn trong Scratch.</p>
+
+                <button type="submit">Gửi yêu cầu</button>
+            </form>
+        </div>
     </main>
 
     <footer>
         <p>© 2024 Typescript.X-VN. Tất cả quyền được bảo lưu.</p>
+        <p><a href="#" style="color: white;">Điều khoản sử dụng</a> | <a href="#" style="color: white;">Chính sách bảo mật</a></p>
     </footer>
+
+    <script>
+        // Sự kiện cho nút Đăng nhập
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            alert("Chức năng Đăng nhập đang trong quá trình phát triển.");
+        });
+    </script>
 </body>
+
 </html>
