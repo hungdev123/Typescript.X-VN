@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typescript.X-VN</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav .button {
+            background: #0056b3; /* Nút Đăng ký và Đăng nhập */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        .intro, .features, .news, .community {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Typescript.X-VN</h1>
@@ -14,29 +79,65 @@
                 <li><a href="index.html">Trang chủ</a></li>
                 <li><a href="tinh_hinh.html">Tình hình</a></li>
                 <li><a href="support.html">Trợ giúp</a></li>
-                <li><button id="registerBtn"><a href="register.html">Đăng ký</a></button></li>
-                <li><button id="loginBtn">Đăng nhập</button></li>
+                <li><a class="button" href="register.html">Đăng ký</a></li>
+                <li><a class="button" id="loginBtn">Đăng nhập</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Giới thiệu</h2>
-            <p>Đây là nơi bạn có thể tìm thấy thông tin về Typescript.X.</p>
-            <p>Hãy tham gia cùng chúng tôi để khám phá thêm!</p>
+        <section class="intro">
+            <h2>Chào mừng đến với Typescript.X!</h2>
+            <p>Đây là nơi bạn có thể tìm thấy thông tin và tài nguyên về Typescript.</p>
+            <p>Khám phá các tính năng mới và kết nối với cộng đồng.</p>
+        </section>
+
+        <section class="features">
+            <h2>Tính Năng Nổi Bật</h2>
+            <ul>
+                <li>Hỗ trợ đa nền tảng.</li>
+                <li>Cộng đồng phát triển mạnh mẽ.</li>
+                <li>Tài liệu phong phú và đầy đủ.</li>
+                <li>Cập nhật thường xuyên với các phiên bản mới.</li>
+            </ul>
+        </section>
+
+        <section class="news">
+            <h2>Tin Tức Mới Nhất</h2>
+            <article>
+                <h3>Cập Nhật Phiên Bản</h3>
+                <p>Chúng tôi đã phát hành phiên bản mới với nhiều tính năng hấp dẫn.</p>
+                <a href="#">Đọc thêm...</a>
+            </article>
+            <article>
+                <h3>Hội Thảo Trực Tuyến</h3>
+                <p>Tham gia hội thảo trực tuyến để tìm hiểu thêm về Typescript.</p>
+                <a href="#">Đăng ký ngay</a>
+            </article>
+        </section>
+
+        <section class="community">
+            <h2>Cộng Đồng</h2>
+            <p>Hãy tham gia cùng chúng tôi trên các mạng xã hội để cập nhật thông tin và trao đổi kinh nghiệm!</p>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
         </section>
     </main>
 
     <footer>
         <p>© 2024 Typescript.X-VN. Tất cả quyền được bảo lưu.</p>
+        <p><a href="#" style="color: white;">Điều khoản sử dụng</a> | <a href="#" style="color: white;">Chính sách bảo mật</a></p>
     </footer>
 
     <script>
         // Sự kiện cho nút Đăng nhập
-        document.getElementById('loginBtn').addEventListener('click', function() {
+        document.getElementById('loginBtn').addEventListener('click', function () {
             alert("Chức năng Đăng nhập đang trong quá trình phát triển.");
         });
     </script>
 </body>
+
 </html>
