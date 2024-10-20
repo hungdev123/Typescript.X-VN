@@ -1,6 +1,6 @@
 // Hàm để xác minh thông tin đăng nhập
 function loginUser(username, password) {
-    fetch('users.json') // Thay đổi đường dẫn đến file JSON
+    fetch('users.json') // Đảm bảo đường dẫn đúng
         .then(response => {
             if (!response.ok) {
                 throw new Error('Mã lỗi: ' + response.status);
