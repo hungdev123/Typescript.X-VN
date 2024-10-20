@@ -2,50 +2,14 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập</title>
-    <style>
-        /* Thêm CSS cho giao diện */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #282c34;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        #loginForm {
-            background: #3c4043;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        input {
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <script src="login.js" defer></script>
 </head>
 <body>
-    <div id="loginForm">
-        <h2>Đăng Nhập</h2>
-        <input type="text" id="username" placeholder="Tên người dùng" required>
-        <input type="password" id="password" placeholder="Mật khẩu" required>
-        <button id="loginButton">Đăng Nhập</button>
-    </div>
-    <div id="userDisplay" style="position: absolute; top: 10px; right: 10px; color: #fff;"></div>
-    <script src="login.js"></script>
+    <h1>Đăng Nhập</h1>
+    <input type="text" id="username" placeholder="Tên tài khoản" required>
+    <input type="password" id="password" placeholder="Mật khẩu" required>
+    <button id="loginButton">Đăng Nhập</button>
+    <div id="userDisplay"></div>
 </body>
 </html>
