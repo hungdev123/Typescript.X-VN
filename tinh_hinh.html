@@ -1,34 +1,109 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tình Hình</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tình Hình - Typescript.X-VN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        .info-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>Thông Tin Tình Hình</h1>
+        <h1>Typescript.X-VN</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
                 <li><a href="tinh_hinh.html">Tình hình</a></li>
                 <li><a href="support.html">Trợ giúp</a></li>
-                <li><button id="registerBtn"><a href="register.html">Đăng ký</a></button></li>
-                <li><button id="loginBtn">Đăng nhập</button></li>
+                <li><a class="button" href="register.html">Đăng ký</a></li>
+                <li><a class="button" id="loginBtn">Đăng nhập</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Tình hình hiện tại</h2>
-            <p>Đây là thông tin cập nhật về tình hình dự án.</p>
-        </section>
+        <h2>Tình Hình</h2>
+        <div class="info-container">
+            <p><strong>Phiên bản:</strong> 1.0.0</p>
+            <p><strong>Kết nối:</strong> Online</p>
+            <p><strong>Tốc độ:</strong> Cao</p>
+        </div>
     </main>
 
     <footer>
         <p>© 2024 Typescript.X-VN. Tất cả quyền được bảo lưu.</p>
+        <p><a href="#" style="color: white;">Điều khoản sử dụng</a> | <a href="#" style="color: white;">Chính sách bảo mật</a></p>
     </footer>
+
+    <script>
+        // Sự kiện cho nút Đăng nhập
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            alert("Chức năng Đăng nhập đang trong quá trình phát triển.");
+        });
+    </script>
 </body>
+
 </html>
