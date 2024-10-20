@@ -69,11 +69,6 @@
         button:hover {
             background: #002244; /* Màu xanh nhạt hơn khi hover */
         }
-
-        .message {
-            margin-top: 10px;
-            color: red;
-        }
     </style>
 </head>
 <body>
@@ -91,7 +86,7 @@
         <!-- Hỗ Trợ -->
         <section id="support">
             <h2>Hỗ Trợ</h2>
-            <form id="supportForm" onsubmit="submitSupportRequest(event)">
+            <form action="https://formspree.io/f/xdkonpjy" method="POST">
                 <label for="scratchAccount">Tài khoản Scratch:</label>
                 <input type="text" id="scratchAccount" name="scratchAccount" required>
                 <label for="supportTitle">Tiêu đề:</label>
@@ -100,37 +95,8 @@
                 <textarea id="supportReason" name="reason" required></textarea>
                 <p>Bạn sẽ được nhận tin nhắn trong Scratch.</p>
                 <button type="submit">Gửi</button>
-                <div class="message" id="supportMessage"></div>
             </form>
         </section>
     </main>
-
-    <script>
-        // Xử lý gửi yêu cầu hỗ trợ
-        function submitSupportRequest(event) {
-            event.preventDefault();
-
-            const scratchAccount = document.getElementById('scratchAccount').value;
-            const title = document.getElementById('supportTitle').value;
-            const reason = document.getElementById('supportReason').value;
-
-            fetch('https://formspree.io/f/xdkonpjy', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ scratchAccount, title, reason })
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('supportMessage').innerText = 'Gửi yêu cầu thành công!';
-                    document.getElementById('supportForm').reset();
-                } else {
-                    document.getElementById('supportMessage').innerText = 'Gửi yêu cầu thất bại.';
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
 </body>
 </html>
