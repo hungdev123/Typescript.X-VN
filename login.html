@@ -3,96 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Nhập - Typescript.X-VN</title>
+    <title>Đăng Nhập</title>
     <style>
+        /* Thêm CSS cho giao diện */
         body {
             font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
         }
-
-        header {
-            background: #003366; /* Màu xanh đậm */
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background: #002244; /* Màu xanh nhạt hơn khi hover */
-        }
-
-        main {
+        #loginForm {
+            background: #3c4043;
             padding: 20px;
+            border-radius: 8px;
         }
-
-        h2 {
-            margin-top: 20px;
-        }
-
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
         input {
-            width: 100%;
+            margin: 10px 0;
             padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
         }
-
         button {
-            background: #003366; /* Màu xanh đậm */
+            padding: 10px;
+            background: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 15px;
+            border-radius: 5px;
             cursor: pointer;
-            border-radius: 4px;
-        }
-
-        button:hover {
-            background: #002244; /* Màu xanh nhạt hơn khi hover */
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Typescript.X-VN</h1>
-        <nav>
-            <a href="index.html">Trang Chủ</a>
-            <a href="support.html">Hỗ Trợ</a>
-            <a href="register.html">Đăng Ký</a>
-            <a href="login.html">Đăng Nhập</a>
-        </nav>
-    </header>
-
-    <main>
-        <section id="login">
-            <h2>Đăng Nhập Tài Khoản</h2>
-            <form action="https://formspree.io/f/xldedrwz" method="POST">
-                <label for="username">Tên Tài Khoản:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Mật Khẩu:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Đăng Nhập</button>
-            </form>
-        </section>
-    </main>
+    <div id="loginForm">
+        <h2>Đăng Nhập</h2>
+        <input type="text" id="username" placeholder="Tên người dùng" required>
+        <input type="password" id="password" placeholder="Mật khẩu" required>
+        <button id="loginButton">Đăng Nhập</button>
+    </div>
+    <div id="userDisplay" style="position: absolute; top: 10px; right: 10px; color: #fff;"></div>
+    <script src="login.js"></script>
 </body>
 </html>
