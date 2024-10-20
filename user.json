@@ -1,14 +1,8 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "username": "hungdev123",
-      "password": "typescriptx123" // Bạn nên mã hóa mật khẩu này
-    },
-    {
-      "id": 2,
-      "username": "another_user",
-      "password": "another_password_here" // Mã hóa mật khẩu
-    }
-  ]
+    "users": [
+        {
+            "username": "hungdev123",
+            "password": "yourpassword"
+        }
+    ]
 }
