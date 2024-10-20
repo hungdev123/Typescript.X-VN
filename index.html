@@ -43,19 +43,18 @@
             text-align: center;
             padding: 10px;
         }
-        #status {
-            margin-top: 20px;
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
-        .auto-reload {
-            animation: blink 1s linear infinite;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+        button:hover {
+            background-color: #2980b9;
         }
     </style>
-
 </head>
 <body>
 
@@ -68,22 +67,39 @@
 
     <!-- Header -->
     <div class="header">
-        <h1>Chào mừng đến với Typescript.X!</h1>
+        <h1>Chào mừng đến với Typescript.X-VN!</h1>
         <p>Typescript.X là ngôn ngữ lập trình vừa đơn giản vừa dễ tiếp xúc với người Việt.</p>
     </div>
 
     <!-- Phần Status -->
     <div class="section" id="status">
         <h2>Tình Hình</h2>
-        <p>Status: N/A</p>
-        <p>Internet: N/A</p>
-        <p>Version: Alpha <span class="auto-reload">08/10/2024</span></p>
+        <p>Status: <span id="statusText">N/A</span></p>
+        <p>Internet: <span id="internetText">N/A</span></p>
+        <p>Update: <span id="updateText">N/A</span></p>
+        <!-- Nút cập nhật -->
+        <button onclick="updateStatus()">Update</button>
     </div>
 
     <!-- Footer -->
     <div class="footer">
         <p>Copyright © 2024 Typescript.X-VN</p>
     </div>
+
+    <!-- Script để cập nhật status mà không reload -->
+    <script>
+        function updateStatus() {
+            fetch('status.json') // Lấy dữ liệu từ file status.json
+                .then(response => response.json())
+                .then(data => {
+                    // Cập nhật các phần tử trên trang với dữ liệu mới
+                    document.getElementById('statusText').innerText = data.status;
+                    document.getElementById('internetText').innerText = data.internet;
+                    document.getElementById('updateText').innerText = data.update;
+                })
+                .catch(error => console.error('Lỗi khi cập nhật tình hình:', error));
+        }
+    </script>
 
 </body>
 </html>
