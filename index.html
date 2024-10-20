@@ -3,82 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typescript.X-VN</title>
+    <title>Trang Chủ</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-
-        header {
-            background: #003366; /* Màu xanh đậm */
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
-        nav a {
+        .header {
+            background-color: #007bff;
             color: white;
             padding: 10px;
-            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        nav a:hover {
-            background: #002244; /* Màu xanh nhạt hơn khi hover */
+        #userDisplay {
+            margin-right: 20px;
         }
-
-        main {
+        .container {
             padding: 20px;
         }
-
-        h2 {
-            margin-top: 20px;
+        h2, h3 {
+            color: #333;
         }
-
         ul {
             list-style-type: none;
             padding: 0;
         }
-
-        li {
+        ul li {
+            background: #e9ecef;
             margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Typescript.X-VN</h1>
-        <nav>
-            <a href="index.html">Trang Chủ</a>
-            <a href="support.html">Hỗ Trợ</a>
-            <a href="register.html">Đăng Ký</a>
-            <a href="login.html">Đăng Nhập</a>
-        </nav>
-    </header>
+    <div class="header">
+        <h1>Typescript.X</h1>
+        <div id="userDisplay"></div>
+    </div>
+    <div class="container">
+        <h2>Giới thiệu:</h2>
+        <p>Typescript.X là ngôn ngữ lập trình đa dạng và là ngôn ngữ lập trình thứ 6 của Việt Nam</p>
+        <h3>Tính năng mới:</h3>
+        <ul>
+            <li>- Tính năng 1</li>
+            <li>- Tính năng 2</li>
+            <li>- Tính năng 3</li>
+            <li>- Tính năng 4</li>
+        </ul>
+        <h3>Chuyện gì đang xảy ra:</h3>
+        <ul>
+            <li>- Sự kiện 1</li>
+            <li>- Sự kiện 2</li>
+            <li>- Sự kiện 3</li>
+        </ul>
+    </div>
+    <script src="login.js"></script>
+    <script>
+        function updateUserDisplay() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                document.getElementById('userDisplay').textContent = `Xin chào, ${currentUser}!`;
+            } else {
+                document.getElementById('userDisplay').textContent = '';
+            }
+        }
 
-    <main>
-        <!-- Trang Chủ -->
-        <section id="home">
-            <h2>Giới thiệu:</h2>
-            <p>Typescript.X là ngôn ngữ lập trình đa dạng và là ngôn ngữ lập trình thứ 6 của Việt Nam</p>
-            
-            <h2>Tính năng mới:</h2>
-            <ul>
-                <li>-</li>
-                <li>-</li>
-                <li>-</li>
-                <li>-</li>
-            </ul>
-
-            <h2>Chuyện gì đang xảy ra:</h2>
-            <ul>
-                <li>-</li>
-                <li>-</li>
-                <li>-</li>
-            </ul>
-        </section>
-    </main>
+        window.onload = updateUserDisplay;
+    </script>
 </body>
 </html>
