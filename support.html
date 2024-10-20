@@ -9,6 +9,13 @@
 <body>
     <header>
         <h1>Hỗ Trợ</h1>
+        <nav>
+            <a href="index.html">Trang Chủ</a>
+            <a href="tinh_hinh.html">Tình Hình</a>
+            <a href="support.html">Hỗ Trợ</a>
+            <a href="register.html">Đăng Ký</a>
+            <a href="login.html">Đăng Nhập</a>
+        </nav>
     </header>
     <main>
         <form id="supportForm" onsubmit="submitSupportRequest(event)">
@@ -31,7 +38,6 @@
             const title = document.getElementById('supportTitle').value;
             const reason = document.getElementById('supportReason').value;
 
-            // Gửi thông tin đến Formspree (cần thay đổi link nếu cần)
             fetch('https://formspree.io/f/xdkonpjy', {
                 method: 'POST',
                 headers: {
