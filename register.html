@@ -1,164 +1,67 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký - Typescript.X-VN</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: #003366; /* Màu xanh đậm */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        h1, h2 {
-            margin: 10px 0;
-        }
-
-        .form-container {
-            margin-top: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: auto;
-        }
-
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #004494;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #003366; /* Màu xanh đậm */
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .note {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
-        <h1>Typescript.X-VN</h1>
+        <h1>Đăng Ký</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="tinh_hinh.html">Tình hình</a></li>
-                <li><a href="support.html">Trợ giúp</a></li>
-                <li><a class="button" href="register.html">Đăng ký</a></li>
-                <li><a class="button" id="loginBtn">Đăng nhập</a></li>
-            </ul>
+            <a href="index.html">Trang Chủ</a>
+            <a href="tinh_hinh.html">Tình Hình</a>
+            <a href="support.html">Hỗ Trợ</a>
+            <a href="register.html">Đăng Ký</a>
+            <a href="login.html">Đăng Nhập</a>
         </nav>
     </header>
-
     <main>
-        <h2>Đăng Ký</h2>
-        <div class="form-container">
-            <form id="registerForm" onsubmit="registerUser(event)">
-                <label for="scratchAccount">Tài khoản Scratch:</label>
-                <input type="text" id="scratchAccount" name="scratchAccount" required>
-                <p class="note">Bạn sẽ có tài khoản cho đến khi bạn nhận được tin nhắn trong Scratch.</p>
-
-                <label for="username">Tên người dùng:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="submit">Đăng ký</button>
-            </form>
-        </div>
+        <form id="registerForm" onsubmit="registerUser(event)">
+            <label for="registerUsername">Tên người dùng:</label>
+            <input type="text" id="registerUsername" name="username" required>
+            <label for="registerPassword">Mật khẩu:</label>
+            <input type="password" id="registerPassword" name="password" required>
+            <label for="scratchAccount">Tài khoản Scratch:</label>
+            <input type="text" id="scratchAccount" name="scratchAccount" required>
+            <p>Bạn sẽ có tài khoản cho đến khi bạn nhận được tin nhắn trong Scratch.</p>
+            <button type="submit">Đăng Ký</button>
+            <div class="message" id="registerMessage"></div>
+        </form>
     </main>
-
-    <footer>
-        <p>© 2024 Typescript.X-VN. Tất cả quyền được bảo lưu.</p>
-        <p><a href="#" style="color: white;">Điều khoản sử dụng</a> | <a href="#" style="color: white;">Chính sách bảo mật</a></p>
-    </footer>
-
     <script>
-        // Hàm để đăng ký người dùng
-        function registerUser(event) {
-            event.preventDefault(); // Ngăn chặn gửi form
-
-            const scratchAccount = document.getElementById('scratchAccount').value;
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Tạo đối tượng người dùng
-            const user = {
-                scratchAccount,
-                username,
-                password
-            };
-
-            // Lưu người dùng vào Local Storage
-            localStorage.setItem(username, JSON.stringify(user));
-            alert('Đăng ký thành công!');
-            document.getElementById('registerForm').reset(); // Reset form
+        function saveUser(username, password, scratchAccount) {
+            const users = JSON.parse(localStorage.getItem('users')) || {};
+            users[username] = { password, scratchAccount };
+            localStorage.setItem('users', JSON.stringify(users));
         }
 
-        // Sự kiện cho nút Đăng nhập
-        document.getElementById('loginBtn').addEventListener('click', function () {
-            alert("Chức năng Đăng nhập đang trong quá trình phát triển.");
-        });
+        function registerUser(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+            const scratchAccount = document.getElementById('scratchAccount').value;
+
+            fetch('https://formspree.io/f/xldedrwz', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password, scratchAccount })
+            })
+            .then(response => {
+                if (response.ok) {
+                    saveUser(username, password, scratchAccount);
+                    document.getElementById('registerMessage').innerText = 'Đăng ký thành công!';
+                    document.getElementById('registerForm').reset();
+                } else {
+                    document.getElementById('registerMessage').innerText = 'Đăng ký thất bại.';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
     </script>
 </body>
-
 </html>
