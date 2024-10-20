@@ -111,7 +111,7 @@
     <main>
         <h2>Đăng Ký</h2>
         <div class="form-container">
-            <form id="registerForm" action="https://formspree.io/f/xldedrwz" method="POST">
+            <form id="registerForm" onsubmit="registerUser(event)">
                 <label for="scratchAccount">Tài khoản Scratch:</label>
                 <input type="text" id="scratchAccount" name="scratchAccount" required>
                 <p class="note">Bạn sẽ có tài khoản cho đến khi bạn nhận được tin nhắn trong Scratch.</p>
@@ -133,6 +133,27 @@
     </footer>
 
     <script>
+        // Hàm để đăng ký người dùng
+        function registerUser(event) {
+            event.preventDefault(); // Ngăn chặn gửi form
+
+            const scratchAccount = document.getElementById('scratchAccount').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Tạo đối tượng người dùng
+            const user = {
+                scratchAccount,
+                username,
+                password
+            };
+
+            // Lưu người dùng vào Local Storage
+            localStorage.setItem(username, JSON.stringify(user));
+            alert('Đăng ký thành công!');
+            document.getElementById('registerForm').reset(); // Reset form
+        }
+
         // Sự kiện cho nút Đăng nhập
         document.getElementById('loginBtn').addEventListener('click', function () {
             alert("Chức năng Đăng nhập đang trong quá trình phát triển.");
