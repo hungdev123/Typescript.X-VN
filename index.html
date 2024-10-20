@@ -77,8 +77,8 @@
         <p>Status: <span id="statusText">N/A</span></p>
         <p>Internet: <span id="internetText">N/A</span></p>
         <p>Update: <span id="updateText">N/A</span></p>
-        <!-- Nút cập nhật -->
-        <button onclick="updateStatus()">Update</button>
+        <!-- Nút reload -->
+        <button onclick="reloadStatus()">Reload</button>
     </div>
 
     <!-- Footer -->
@@ -86,9 +86,9 @@
         <p>Copyright © 2024 Typescript.X-VN</p>
     </div>
 
-    <!-- Script để cập nhật status mà không reload -->
+    <!-- Script để cập nhật status mà không reload trang -->
     <script>
-        function updateStatus() {
+        function reloadStatus() {
             fetch('status.json') // Lấy dữ liệu từ file status.json
                 .then(response => response.json())
                 .then(data => {
