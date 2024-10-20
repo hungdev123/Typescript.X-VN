@@ -3,25 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tình Hình - Typescript.X-VN</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tình Hình - Typescript.X</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .header {
+            background-color: #004080; /* Màu xanh đậm */
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #004080;
+        }
+        .status {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .status h3 {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Typescript.X-VN</h1>
-        <nav>
-            <a href="index.html">Trang Chủ</a>
-            <a href="tinh_hinh.html">Tình Hình</a>
-            <a href="support.html">Hỗ Trợ</a>
-            <a href="register.html">Đăng Ký</a>
-            <a href="login.html">Đăng Nhập</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Tình Hình</h2>
-        <p>Phiên bản: 1.0</p>
-        <p>Kết nối: Đang hoạt động</p>
-        <p>Tốc độ: Nhanh</p>
-    </main>
+    <div class="header">
+        <h1>Tình Hình - Typescript.X</h1>
+    </div>
+
+    <div class="content">
+        <h2>Phiên bản:</h2>
+        <div class="status">
+            <h3>Version 1.0.0</h3>
+            <p>Đây là phiên bản đầu tiên của Typescript.X, với nhiều tính năng mới.</p>
+        </div>
+
+        <h2>Kết nối:</h2>
+        <div class="status">
+            <h3>Trạng thái kết nối: Đang hoạt động</h3>
+            <p>Hệ thống đang hoạt động ổn định và không gặp sự cố.</p>
+        </div>
+
+        <h2>Tốc độ:</h2>
+        <div class="status">
+            <h3>Tốc độ hiện tại: 100 Mbps</h3>
+            <p>Tốc độ mạng ổn định và đủ nhanh để thực hiện các tác vụ.</p>
+        </div>
+    </div>
 </body>
 </html>
