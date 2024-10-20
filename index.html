@@ -3,49 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
+    <title>Typescript.X</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
         }
         .header {
-            background-color: #007bff;
-            color: white;
+            background-color: #004080; /* Màu xanh đậm */
             padding: 10px;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .tabs {
-            display: flex;
-            gap: 15px;
-        }
-        .tab {
+        .tabs a {
             color: white;
-            cursor: pointer;
+            padding: 10px;
             text-decoration: none;
         }
-        #userDisplay {
-            margin-right: 20px;
-        }
-        .container {
-            padding: 20px;
-        }
-        h2, h3 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            background: #e9ecef;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
+        #authButtons button {
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -58,36 +37,13 @@
             <a class="tab" href="support.html">Trợ giúp</a>
         </div>
         <div id="userDisplay"></div>
+        <div id="authButtons">
+            <button id="loginButton" onclick="location.href='login.html'">Đăng nhập</button>
+            <button id="registerButton" onclick="location.href='register.html'">Đăng ký</button>
+            <button id="logoutButton" style="display: none;" onclick="logout()">Đăng xuất</button>
+        </div>
     </div>
-    <div class="container">
-        <h2>Giới thiệu:</h2>
-        <p>Typescript.X là ngôn ngữ lập trình đa dạng và là ngôn ngữ lập trình thứ 6 của Việt Nam</p>
-        <h3>Tính năng mới:</h3>
-        <ul>
-            <li>- Tính năng 1</li>
-            <li>- Tính năng 2</li>
-            <li>- Tính năng 3</li>
-            <li>- Tính năng 4</li>
-        </ul>
-        <h3>Chuyện gì đang xảy ra:</h3>
-        <ul>
-            <li>- Sự kiện 1</li>
-            <li>- Sự kiện 2</li>
-            <li>- Sự kiện 3</li>
-        </ul>
-    </div>
-    <script src="login.js"></script>
-    <script>
-        function updateUserDisplay() {
-            const currentUser = localStorage.getItem('currentUser');
-            if (currentUser) {
-                document.getElementById('userDisplay').textContent = `Xin chào, ${currentUser}!`;
-            } else {
-                document.getElementById('userDisplay').textContent = '';
-            }
-        }
 
-        window.onload = updateUserDisplay;
-    </script>
+    <script src="login.js"></script>
 </body>
 </html>
