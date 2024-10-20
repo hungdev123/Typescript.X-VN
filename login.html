@@ -4,71 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập - Typescript.X-VN</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Đăng Nhập</h1>
-        <nav>
-            <a href="index.html">Trang Chủ</a>
-            <a href="tinh_hinh.html">Tình Hình</a>
-            <a href="support.html">Hỗ Trợ</a>
-            <a href="register.html">Đăng Ký</a>
-            <a href="login.html">Đăng Nhập</a>
-        </nav>
-    </header>
-    <main>
-        <form id="loginForm" onsubmit="loginUser(event)">
-            <label forDưới đây là mã HTML hoàn chỉnh cho phần đăng nhập:
-
-### 5. `login.html` - Đăng Nhập
-
-```html
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Nhập - Typescript.X-VN</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Đăng Nhập</h1>
-        <nav>
-            <a href="index.html">Trang Chủ</a>
-            <a href="tinh_hinh.html">Tình Hình</a>
-            <a href="support.html">Hỗ Trợ</a>
-            <a href="register.html">Đăng Ký</a>
-            <a href="login.html">Đăng Nhập</a>
-        </nav>
-    </header>
-    <main>
-        <form id="loginForm" onsubmit="loginUser(event)">
-            <label for="loginUsername">Tên người dùng:</label>
-            <input type="text" id="loginUsername" name="username" required>
-            <label for="loginPassword">Mật khẩu:</label>
-            <input type="password" id="loginPassword" name="password" required>
-            <button type="submit">Đăng Nhập</button>
-            <div class="message" id="loginMessage"></div>
-        </form>
-    </main>
-    <script>
-        function loginUser(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-
-            const users = JSON.parse(localStorage.getItem('users')) || {};
-
-            if (users[username] && users[username].password === password) {
-                document.getElementById('loginMessage').innerText = 'Đăng nhập thành công!';
-                // Bạn có thể điều hướng đến trang chính hoặc làm gì đó sau khi đăng nhập thành công
-            } else {
-                document.getElementById('loginMessage').innerText = 'Tên người dùng hoặc mật khẩu không đúng.';
-            }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-    </script>
+
+        header {
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #002244; /* Màu xanh nhạt hơn khi hover */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #003366; /* Màu xanh đậm */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #002244; /* Màu xanh nhạt hơn khi hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Typescript.X-VN</h1>
+        <nav>
+            <a href="index.html">Trang Chủ</a>
+            <a href="support.html">Hỗ Trợ</a>
+            <a href="register.html">Đăng Ký</a>
+            <a href="login.html">Đăng Nhập</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login">
+            <h2>Đăng Nhập Tài Khoản</h2>
+            <form action="https://formspree.io/f/xldedrwz" method="POST">
+                <label for="username">Tên Tài Khoản:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Mật Khẩu:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Đăng Nhập</button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
