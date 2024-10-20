@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ứng Dụng Của Tôi</title>
+    <title>Typescript.X-VN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
             padding: 20px;
         }
         header {
-            background: #007BFF;
+            background: #004085; /* Màu xanh đậm */
             color: white;
             padding: 10px 20px;
             text-align: center;
@@ -30,7 +30,7 @@
             transition: background 0.3s;
         }
         nav a:hover {
-            background: #0056b3;
+            background: #003057; /* Màu xanh đậm hơn */
         }
         section {
             background: white;
@@ -38,49 +38,73 @@
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .status-info {
-            margin-top: 20px;
-        }
         footer {
             text-align: center;
             margin-top: 20px;
             color: #777;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #004085; /* Màu xanh đậm */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003057; /* Màu xanh đậm hơn */
+        }
+        .message {
+            margin-top: 20px;
+            color: red;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Chào Mừng Đến Với Ứng Dụng Của Tôi</h1>
+    <h1>Chào Mừng Đến Với Typescript.X-VN</h1>
 </header>
 
 <nav>
     <a href="#" onclick="showHome()">Trang Chủ</a>
     <a href="#" onclick="showStatus()">Tình Hình</a>
     <a href="#" onclick="showHelp()">Trợ Giúp</a>
+    <a href="#" onclick="showRegister()">Đăng Ký</a>
+    <a href="#" onclick="showLogin()">Đăng Nhập</a>
 </nav>
 
 <section id="content">
     <h2>Trang Chủ</h2>
-    <p>Đây là phần trang chủ của ứng dụng. Tại đây, bạn có thể tìm thấy thông tin mới nhất và các tính năng nổi bật của ứng dụng.</p>
+    <p>Đây là phần trang chủ của ứng dụng Typescript.X-VN. Tại đây, bạn có thể tìm thấy thông tin mới nhất và các tính năng nổi bật của ứng dụng.</p>
 </section>
 
 <footer>
-    <p>&copy; 2024 Ứng Dụng Của Tôi. Tất cả quyền được bảo lưu.</p>
+    <p>&copy; 2024 Typescript.X-VN. Tất cả quyền được bảo lưu.</p>
 </footer>
 
 <script>
     function showHome() {
         document.getElementById('content').innerHTML = `
             <h2>Trang Chủ</h2>
-            <p>Đây là phần trang chủ của ứng dụng. Tại đây, bạn có thể tìm thấy thông tin mới nhất và các tính năng nổi bật của ứng dụng.</p>
+            <p>Đây là phần trang chủ của ứng dụng Typescript.X-VN. Tại đây, bạn có thể tìm thấy thông tin mới nhất và các tính năng nổi bật của ứng dụng.</p>
         `;
     }
 
     function showStatus() {
         document.getElementById('content').innerHTML = `
             <h2>Tình Hình</h2>
-            <div class="status-info">
+            <div>
                 <p><strong>Phiên bản:</strong> 1.0.0</p>
                 <p><strong>Kết nối:</strong> Đang hoạt động</p>
                 <p><strong>Tốc độ:</strong> Tốt</p>
@@ -96,6 +120,82 @@
             <p>Lí do: <strong>Mô tả vấn đề của bạn</strong></p>
             <p>Bạn sẽ được nhận tin nhắn trong Scratch.</p>
         `;
+    }
+
+    function showRegister() {
+        document.getElementById('content').innerHTML = `
+            <h2>Đăng Ký</h2>
+            <form id="registerForm" onsubmit="registerUser(event)">
+                <label for="registerUsername">Tên người dùng:</label>
+                <input type="text" id="registerUsername" name="username" required>
+
+                <label for="registerPassword">Mật khẩu:</label>
+                <input type="password" id="registerPassword" name="password" required>
+
+                <label for="scratchAccount">Tài khoản Scratch:</label>
+                <input type="text" id="scratchAccount" name="scratchAccount" required>
+                <p>Bạn sẽ có tài khoản cho đến khi bạn nhận được tin nhắn trong Scratch.</p>
+
+                <button type="submit">Đăng Ký</button>
+                <div class="message" id="registerMessage"></div>
+            </form>
+        `;
+    }
+
+    function showLogin() {
+        document.getElementById('content').innerHTML = `
+            <h2>Đăng Nhập</h2>
+            <form id="loginForm" onsubmit="loginUser(event)">
+                <label for="loginUsername">Tên người dùng:</label>
+                <input type="text" id="loginUsername" name="username" required>
+
+                <label for="loginPassword">Mật khẩu:</label>
+                <input type="password" id="loginPassword" name="password" required>
+
+                <button type="submit">Đăng Nhập</button>
+                <div class="message" id="loginMessage"></div>
+            </form>
+        `;
+    }
+
+    function registerUser(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('registerUsername').value;
+        const password = document.getElementById('registerPassword').value;
+        const scratchAccount = document.getElementById('scratchAccount').value;
+
+        fetch('https://formspree.io/f/xldedrwz', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password, scratchAccount })
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('registerMessage').innerText = 'Đăng ký thành công!';
+                document.getElementById('registerForm').reset();
+            } else {
+                document.getElementById('registerMessage').innerText = 'Đăng ký thất bại.';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function loginUser(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+
+        // Giả lập đăng nhập
+        if (username && password) {
+            document.getElementById('loginMessage').innerText = 'Đăng nhập thành công!';
+            // Thực hiện hành động khác sau khi đăng nhập thành công
+        } else {
+            document.getElementById('loginMessage').innerText = 'Tên người dùng hoặc mật khẩu không đúng.';
+        }
     }
 </script>
 
