@@ -19,6 +19,15 @@
             justify-content: space-between;
             align-items: center;
         }
+        .tabs {
+            display: flex;
+            gap: 15px;
+        }
+        .tab {
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
         #userDisplay {
             margin-right: 20px;
         }
@@ -43,6 +52,11 @@
 <body>
     <div class="header">
         <h1>Typescript.X</h1>
+        <div class="tabs">
+            <a class="tab" href="index.html">Trang chủ</a>
+            <a class="tab" href="tinh_hinh.html">Tình hình</a>
+            <a class="tab" href="support.html">Trợ giúp</a>
+        </div>
         <div id="userDisplay"></div>
     </div>
     <div class="container">
