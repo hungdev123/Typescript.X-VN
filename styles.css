@@ -28,7 +28,7 @@ nav a {
 }
 
 nav button {
-    background: #0056b3;
+    background: #0056b3; /* Màu xanh sáng cho nút */
     color: white;
     border: none;
     border-radius: 5px;
