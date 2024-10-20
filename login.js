@@ -1,38 +1,44 @@
 const users = [
-    {
-        "username": "hungdev123",
-        "password": "typescriptx123"
-    },
-    {
-        "username": "anotherUser",
-        "password": "anotherPassword"
-    }
+    { username: "hungdev123", password: "typescriptx123" } // Thay 'yourPassword' bằng mật khẩu thực tế
 ];
-
-function loginUser(username, password) {
-    const user = users.find(u => u.username === username);
-    if (user && user.password === password) {
-        alert('Đăng nhập thành công!');
-        localStorage.setItem('currentUser', username);
-        updateUserDisplay();
-        window.location.href = "index.html";
-    } else {
-        alert('Tên tài khoản hoặc mật khẩu không chính xác!');
-    }
-}
 
 function updateUserDisplay() {
     const currentUser = localStorage.getItem('currentUser');
+    const userDisplay = document.getElementById('userDisplay');
+    const loginButton = document.getElementById('loginButton');
+    const registerButton = document.getElementById('registerButton');
+    const logoutButton = document.getElementById('logoutButton');
+
     if (currentUser) {
-        const userDisplay = document.getElementById('userDisplay');
         userDisplay.textContent = `Xin chào, ${currentUser}!`;
+        loginButton.style.display = 'none';
+        registerButton.style.display = 'none';
+        logoutButton.style.display = 'inline';
+    } else {
+        userDisplay.textContent = '';
+        loginButton.style.display = 'inline';
+        registerButton.style.display = 'inline';
+        logoutButton.style.display = 'none';
     }
 }
 
-document.getElementById('loginButton').addEventListener('click', function() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    loginUser(username, password);
-});
+function logout() {
+    localStorage.removeItem('currentUser');
+    updateUserDisplay();
+}
+
+function loginUser() {
+    const usernameInput = document.getElementById('username').value;
+    const passwordInput = document.getElementById('password').value;
+    const user = users.find(user => user.username === usernameInput && user.password === passwordInput);
+
+    if (user) {
+        localStorage.setItem('currentUser', user.username);
+        updateUserDisplay();
+        window.location.href = 'index.html'; // Chuyển hướng về trang chính
+    } else {
+        alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+    }
+}
 
 window.onload = updateUserDisplay;
